@@ -22,6 +22,7 @@ class TorchConfigContextManager:
         # Set default cuda device
         if torch.cuda.is_available():
             device = ray.train.torch.get_device()
+            print(device)
             if device.type == "cuda":
                 torch.cuda.set_device(device)
 
