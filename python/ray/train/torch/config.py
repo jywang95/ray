@@ -23,8 +23,7 @@ class TorchConfigContextManager:
         if torch.cuda.is_available():
             device = ray.train.torch.get_device()
             if device.type == "cuda":
-                # torch.cuda.set_device(device)
-                torch.cuda.set_device(0)
+                torch.cuda.set_device(device)
 
     def __exit__(self, type, value, traceback):
         # Propagate exceptions if any
